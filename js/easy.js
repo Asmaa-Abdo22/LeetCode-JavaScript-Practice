@@ -10,3 +10,9 @@
 // };
 // console.log(twoSum([2, 7, 11, 15],9))
 
+//& 2-  isPalindrome
+// var isPalindrome = function (x) {
+//   let result = Number(x.toString().split("").reverse().join(""));
+//   return x === result;
+// };
+// console.log(isPalindrome(121));
