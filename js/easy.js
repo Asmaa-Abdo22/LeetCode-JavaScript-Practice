@@ -44,3 +44,23 @@ var romanToInt = function (s) {
 
   return total;
 };
+//& 4-  Longest Common Prefix
+var longestCommonPrefix = function (strs) {
+  if (strs.length === 0) return "";
+
+  let prefix = "";
+  // ["flower", "flow", "flight"]
+  for (let i = 0; i < strs[0].length; i++) {
+    let char = strs[0][i];
+
+    for (let j = 1; j < strs.length; j++) {
+      if (strs[j][i] !== char) {
+        return prefix;
+      }
+    }
+
+    prefix += char;
+  }
+
+  return prefix;
+};
