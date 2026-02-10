@@ -84,22 +84,31 @@
 // console.log(counter());
 // console.log(counter());
 //& 7- Counter II
-var createCounter = function (init) {
-  const original = init;
-  return {
-    increment: () => {
-      return ++init;
-    },
-    decrement: () => {
-      return --init;
-    },
-    reset: () => {
-      init = original;
-      return init;
-    },
-  };
+// var createCounter = function (init) {
+//   const original = init;
+//   return {
+//     increment: () => {
+//       return ++init;
+//     },
+//     decrement: () => {
+//       return --init;
+//     },
+//     reset: () => {
+//       init = original;
+//       return init;
+//     },
+//   };
+// };
+// const counter = createCounter(5);
+// console.log(counter.increment());
+// console.log(counter.reset());
+// console.log(counter.decrement());
+//& 8- Apply Transform Over Each Element in Array
+var map = function (arr, fn) {
+  let returnedArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    returnedArray.push(fn(arr[i], i));
+  }
+  return returnedArray;
 };
-const counter = createCounter(5);
-console.log(counter.increment());
-console.log(counter.reset());
-console.log(counter.decrement());
+console.log(map([1,2,3], function plusone(n) { return n + 1; }));
