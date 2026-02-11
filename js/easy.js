@@ -104,11 +104,31 @@
 // console.log(counter.reset());
 // console.log(counter.decrement());
 //& 8- Apply Transform Over Each Element in Array
-var map = function (arr, fn) {
-  let returnedArray = [];
+// var map = function (arr, fn) {
+//   let returnedArray = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     returnedArray.push(fn(arr[i], i));
+//   }
+//   return returnedArray;
+// };
+// console.log(
+//   map([1, 2, 3], function plusone(n) {
+//     return n + 1;
+//   }),
+// );
+
+//& 9- Filter Elements from Array
+var filter = function (arr, fn) {
+  let filteredArr = [];
   for (let i = 0; i < arr.length; i++) {
-    returnedArray.push(fn(arr[i], i));
+    if (Boolean(fn(arr[i], i))) {
+      filteredArr.push(arr[i]);
+    }
   }
-  return returnedArray;
+  return filteredArr;
 };
-console.log(map([1,2,3], function plusone(n) { return n + 1; }));
+console.log(
+  filter([0, 10, 20, 30], function greaterThan10(n) {
+    return n > 10;
+  }),
+);
