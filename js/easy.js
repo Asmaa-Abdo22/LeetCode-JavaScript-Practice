@@ -118,17 +118,28 @@
 // );
 
 //& 9- Filter Elements from Array
-var filter = function (arr, fn) {
-  let filteredArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (Boolean(fn(arr[i], i))) {
-      filteredArr.push(arr[i]);
-    }
+// var filter = function (arr, fn) {
+//   let filteredArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Boolean(fn(arr[i], i))) {
+//       filteredArr.push(arr[i]);
+//     }
+//   }
+//   return filteredArr;
+// };
+// console.log(
+//   filter([0, 10, 20, 30], function greaterThan10(n) {
+//     return n > 10;
+//   }),
+// );
+//& 10- Array Reduce Transformation
+var reduce = function (nums, fn, init) {
+  let val=init
+  if (nums.length === 0) {
+    return init;
   }
-  return filteredArr;
+  for (let i = 0; i < nums.length; i++) {
+    val = fn(val, nums[i]);
+  }
+  return val;
 };
-console.log(
-  filter([0, 10, 20, 30], function greaterThan10(n) {
-    return n > 10;
-  }),
-);
