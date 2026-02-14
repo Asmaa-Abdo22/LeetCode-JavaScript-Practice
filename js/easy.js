@@ -133,13 +133,34 @@
 //   }),
 // );
 //& 10- Array Reduce Transformation
-var reduce = function (nums, fn, init) {
-  let val=init
-  if (nums.length === 0) {
-    return init;
-  }
-  for (let i = 0; i < nums.length; i++) {
-    val = fn(val, nums[i]);
-  }
-  return val;
+// var reduce = function (nums, fn, init) {
+//   let val = init;
+//   if (nums.length === 0) {
+//     return init;
+//   }
+//   for (let i = 0; i < nums.length; i++) {
+//     val = fn(val, nums[i]);
+//   }
+//   return val;
+// };
+//& 11- To Be Or Not To Be
+var expect = function (val) {
+  return {
+    toBe: function (valToBe) {
+      if (val === valToBe) {
+        return true;
+      } else {
+        throw new Error("Not Equal");
+      }
+    },
+    notToBe: function (valNotToBe) {
+      if (val !== valNotToBe) {
+        return true;
+      } else {
+        throw new Error("Equal");
+      }
+    },
+  };
 };
+console.log(expect(5).toBe(5));
+// console.log(expect(5).notToBe(5));
