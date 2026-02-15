@@ -144,23 +144,28 @@
 //   return val;
 // };
 //& 11- To Be Or Not To Be
-var expect = function (val) {
-  return {
-    toBe: function (valToBe) {
-      if (val === valToBe) {
-        return true;
-      } else {
-        throw new Error("Not Equal");
-      }
-    },
-    notToBe: function (valNotToBe) {
-      if (val !== valNotToBe) {
-        return true;
-      } else {
-        throw new Error("Equal");
-      }
-    },
-  };
-};
-console.log(expect(5).toBe(5));
+// var expect = function (val) {
+//   return {
+//     toBe: function (valToBe) {
+//       if (val === valToBe) {
+//         return true;
+//       } else {
+//         throw new Error("Not Equal");
+//       }
+//     },
+//     notToBe: function (valNotToBe) {
+//       if (val !== valNotToBe) {
+//         return true;
+//       } else {
+//         throw new Error("Equal");
+//       }
+//     },
+//   };
+// };
+// console.log(expect(5).toBe(5));
 // console.log(expect(5).notToBe(5));
+//& 12- Return Length of Arguments Passed
+var argumentsLength = function (...args) {
+  return args.length
+};
+console.log(argumentsLength([{}, null, "3"]))
