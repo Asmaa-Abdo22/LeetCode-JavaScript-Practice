@@ -165,7 +165,18 @@
 // console.log(expect(5).toBe(5));
 // console.log(expect(5).notToBe(5));
 //& 12- Return Length of Arguments Passed
-var argumentsLength = function (...args) {
-  return args.length
+// var argumentsLength = function (...args) {
+//   return args.length;
+// };
+// console.log(argumentsLength([{}, null, "3"]));
+//& 13- Allow One Function Call
+var once = function (fn) {
+  let called = false;
+  return function (...args) {
+    if (!called) {
+      called = true;
+      return fn(...args);
+    }
+    return undefined
+  };
 };
-console.log(argumentsLength([{}, null, "3"]))
