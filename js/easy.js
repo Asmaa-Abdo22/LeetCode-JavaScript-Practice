@@ -170,13 +170,19 @@
 // };
 // console.log(argumentsLength([{}, null, "3"]));
 //& 13- Allow One Function Call
-var once = function (fn) {
-  let called = false;
-  return function (...args) {
-    if (!called) {
-      called = true;
-      return fn(...args);
-    }
-    return undefined
-  };
+// var once = function (fn) {
+//   let called = false;
+//   return function (...args) {
+//     if (!called) {
+//       called = true;
+//       return fn(...args);
+//     }
+//     return undefined
+//   };
+// };
+//& 14- Add Two Promises
+var addTwoPromises = async function (promise1, promise2) {
+  let val1 = await promise1;
+  let val2 = await promise2;
+  return val1 + val2;
 };
