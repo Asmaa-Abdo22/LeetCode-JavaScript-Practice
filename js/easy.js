@@ -181,8 +181,16 @@
 //   };
 // };
 //& 14- Add Two Promises
-var addTwoPromises = async function (promise1, promise2) {
-  let val1 = await promise1;
-  let val2 = await promise2;
-  return val1 + val2;
-};
+// var addTwoPromises = async function (promise1, promise2) {
+//   let val1 = await promise1;
+//   let val2 = await promise2;
+//   return val1 + val2;
+// };
+//& 15- Sleep
+async function sleep(millis) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, millis);
+  });
+}
