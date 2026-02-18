@@ -187,10 +187,22 @@
 //   return val1 + val2;
 // };
 //& 15- Sleep
-async function sleep(millis) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, millis);
-  });
-}
+// async function sleep(millis) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, millis);
+//   });
+// }
+//& 16- Timeout Cancellation
+var cancellable = function (fn, args, t) {
+  let timeoutId = setTimeout(() => {
+    fn(...args);
+  }, t);
+
+  const cancel = () => {
+    clearTimeout(timeoutId);
+  };
+
+  return cancel;
+};
