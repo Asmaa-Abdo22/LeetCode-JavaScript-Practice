@@ -195,14 +195,32 @@
 //   });
 // }
 //& 16- Timeout Cancellation
-var cancellable = function (fn, args, t) {
-  let timeoutId = setTimeout(() => {
-    fn(...args);
+// var cancellable = function (fn, args, t) {
+//   let timeoutId = setTimeout(() => {
+//     fn(...args);
+//   }, t);
+
+//   const cancel = () => {
+//     clearTimeout(timeoutId);
+//   };
+
+//   return cancel;
+// };
+//& 17- Interval Cancellation
+var cancellable = function(fn, args, t, cancelTimeMs) {
+  fn(...args);
+  const repeatCount = Math.floor(cancelTimeMs / t);
+  let count = 0;
+  const intervalId = setInterval(() => {
+    if (count >= repeatCount) {
+      clearInterval(intervalId);
+    } else {
+      fn(...args);
+      count++;
+    }
   }, t);
-
-  const cancel = () => {
-    clearTimeout(timeoutId);
-  };
-
-  return cancel;
+  const cancelFn = () => clearInterval(intervalId);
+  return cancelFn;
 };
+let cancel = cancellable((x) => console.log(x*2), [4], 35, 190);
+// cancel()
