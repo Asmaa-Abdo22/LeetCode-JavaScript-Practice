@@ -225,6 +225,21 @@
 // let cancel = cancellable((x) => console.log(x*2), [4], 35, 190);
 // cancel()
 //& 18- Sort By
-var sortBy = function (arr, fn) {
-  return arr.sort((a, b) => fn(a) - fn(b));
+// var sortBy = function (arr, fn) {
+//   return arr.sort((a, b) => fn(a) - fn(b));
+// };
+//& 19- Plus One
+var plusOne = function (digits) {
+  for (let i = digits.length - 1; i >= 0; i--) {
+    digits[i]++;
+
+    if (digits[i] < 10) {
+      return digits;   
+    }
+
+    digits[i] = 0;
+  }
+
+  digits.unshift(1);
+  return digits;
 };
