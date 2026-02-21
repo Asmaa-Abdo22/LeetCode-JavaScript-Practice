@@ -207,20 +207,24 @@
 //   return cancel;
 // };
 //& 17- Interval Cancellation
-var cancellable = function(fn, args, t, cancelTimeMs) {
-  fn(...args);
-  const repeatCount = Math.floor(cancelTimeMs / t);
-  let count = 0;
-  const intervalId = setInterval(() => {
-    if (count >= repeatCount) {
-      clearInterval(intervalId);
-    } else {
-      fn(...args);
-      count++;
-    }
-  }, t);
-  const cancelFn = () => clearInterval(intervalId);
-  return cancelFn;
-};
-let cancel = cancellable((x) => console.log(x*2), [4], 35, 190);
+// var cancellable = function(fn, args, t, cancelTimeMs) {
+//   fn(...args);
+//   const repeatCount = Math.floor(cancelTimeMs / t);
+//   let count = 0;
+//   const intervalId = setInterval(() => {
+//     if (count >= repeatCount) {
+//       clearInterval(intervalId);
+//     } else {
+//       fn(...args);
+//       count++;
+//     }
+//   }, t);
+//   const cancelFn = () => clearInterval(intervalId);
+//   return cancelFn;
+// };
+// let cancel = cancellable((x) => console.log(x*2), [4], 35, 190);
 // cancel()
+//& 18- Sort By
+var sortBy = function (arr, fn) {
+  return arr.sort((a, b) => fn(a) - fn(b));
+};
