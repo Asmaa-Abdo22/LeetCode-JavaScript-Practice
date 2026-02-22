@@ -229,17 +229,30 @@
 //   return arr.sort((a, b) => fn(a) - fn(b));
 // };
 //& 19- Plus One
-var plusOne = function (digits) {
-  for (let i = digits.length - 1; i >= 0; i--) {
-    digits[i]++;
+// var plusOne = function (digits) {
+//   for (let i = digits.length - 1; i >= 0; i--) {
+//     digits[i]++;
 
-    if (digits[i] < 10) {
-      return digits;   
+//     if (digits[i] < 10) {
+//       return digits;
+//     }
+
+//     digits[i] = 0;
+//   }
+
+//   digits.unshift(1);
+//   return digits;
+// };
+
+//& 20- Remove Duplicates from Sorted Array
+var removeDuplicates = function (nums) {
+  let numOfK = 1;
+  if (nums.length === 0) return 0;
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[i - 1]) {
+      nums[numOfK] = nums[i];
+      numOfK++;
     }
-
-    digits[i] = 0;
   }
-
-  digits.unshift(1);
-  return digits;
+  return numOfK;
 };
