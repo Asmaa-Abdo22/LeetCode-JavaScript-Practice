@@ -245,14 +245,23 @@
 // };
 
 //& 20- Remove Duplicates from Sorted Array
-var removeDuplicates = function (nums) {
-  let numOfK = 1;
-  if (nums.length === 0) return 0;
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[i] !== nums[i - 1]) {
-      nums[numOfK] = nums[i];
-      numOfK++;
+// var removeDuplicates = function (nums) {
+//   let numOfK = 1;
+//   if (nums.length === 0) return 0;
+//   for (let i = 1; i < nums.length; i++) {
+//     if (nums[i] !== nums[i - 1]) {
+//       nums[numOfK] = nums[i];
+//       numOfK++;
+//     }
+//   }
+//   return numOfK;
+// };
+//& 21- Missing Number
+var missingNumber = function (nums) {
+  for (let i = 0; i <= nums.length; i++) {
+    if (!nums.includes(i)) {
+      return i;
     }
   }
-  return numOfK;
 };
+console.log(missingNumber([2, 0, 1,4]));
