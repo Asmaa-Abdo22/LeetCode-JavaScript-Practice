@@ -257,11 +257,22 @@
 //   return numOfK;
 // };
 //& 21- Missing Number
-var missingNumber = function (nums) {
-  for (let i = 0; i <= nums.length; i++) {
-    if (!nums.includes(i)) {
-      return i;
+// var missingNumber = function (nums) {
+//   for (let i = 0; i <= nums.length; i++) {
+//     if (!nums.includes(i)) {
+//       return i;
+//     }
+//   }
+// };
+// console.log(missingNumber([2, 0, 1,4]));
+//& 22- Remove Element
+var removeElement = function (nums, val) {
+  let k = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      nums[k] = nums[i];
+      k++;
     }
   }
+  return k;
 };
-console.log(missingNumber([2, 0, 1,4]));
