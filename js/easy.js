@@ -266,13 +266,31 @@
 // };
 // console.log(missingNumber([2, 0, 1,4]));
 //& 22- Remove Element
-var removeElement = function (nums, val) {
-  let k = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      nums[k] = nums[i];
-      k++;
-    }
-  }
-  return k;
+// var removeElement = function (nums, val) {
+//   let k = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) {
+//       nums[k] = nums[i];
+//       k++;
+//     }
+//   }
+//   return k;
+// };
+//& 23- Search Insert Position
+var searchInsert = function (nums, target) {
+  //   for (let i = 0; i < nums.length; i++) {
+  //     if (target == nums[i]) {
+  //       return i;
+  //     } else if (target !== nums[i] && target < nums[i]) {
+  //       return i - 1;
+  //     }
+  //   }
 };
+//& 24- Merge Sorted Array
+var merge = function (nums1, m, nums2, n) {
+  for (let i = 0; i < n; i++) {
+    nums1[m + i] = nums2[i];
+  }
+  nums1.sort((a,b)=>a-b)
+};
+// console.log(merge([1,2,3,0,0,0],3,[2,5,6],3))
