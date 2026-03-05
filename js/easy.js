@@ -304,13 +304,24 @@
 // };
 // console.log(singleNumber([2, 2, 1]));
 //& 26- Move Zeroes
-var moveZeroes = function (nums) {
+// var moveZeroes = function (nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] == 0) {
+//       nums.splice(i, 1);
+//       nums.push(0);
+//       i--
+//     }
+//   }
+//   return nums;
+// };
+//& 27- Contains Duplicate
+var containsDuplicate = function (nums) {
+  let notExist = new Set();
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] == 0) {
-      nums.splice(i, 1);
-      nums.push(0);
-      i--
+    if (notExist.has(nums[i])) {
+      return true;
     }
+    notExist.add(nums[i]);
   }
-  return nums;
+  return false;
 };
