@@ -295,11 +295,22 @@
 // };
 // console.log(merge([1,2,3,0,0,0],3,[2,5,6],3))
 //& 25- Single Number
-var singleNumber = function (nums) {
-  let result = 0;
+// var singleNumber = function (nums) {
+//   let result = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     result ^= nums[i];
+//   }
+//   return result;
+// };
+// console.log(singleNumber([2, 2, 1]));
+//& 26- Move Zeroes
+var moveZeroes = function (nums) {
   for (let i = 0; i < nums.length; i++) {
-    result ^= nums[i];
+    if (nums[i] == 0) {
+      nums.splice(i, 1);
+      nums.push(0);
+      i--
+    }
   }
-  return result;
+  return nums;
 };
-console.log(singleNumber([2, 2, 1]));
