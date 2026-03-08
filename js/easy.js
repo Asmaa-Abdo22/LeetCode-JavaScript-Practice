@@ -315,13 +315,29 @@
 //   return nums;
 // };
 //& 27- Contains Duplicate
-var containsDuplicate = function (nums) {
-  let notExist = new Set();
+// var containsDuplicate = function (nums) {
+//   let notExist = new Set();
+//   for (let i = 0; i < nums.length; i++) {
+//     if (notExist.has(nums[i])) {
+//       return true;
+//     }
+//     notExist.add(nums[i]);
+//   }
+//   return false;
+// };
+//& 28- Max Consecutive Ones
+var findMaxConsecutiveOnes = function (nums) {
+  let count = 0;
+  let max = 0;
+
   for (let i = 0; i < nums.length; i++) {
-    if (notExist.has(nums[i])) {
-      return true;
+    if (nums[i] === 1) {
+      count++;
+      max = Math.max(max, count);
+    } else {
+      count = 0;
     }
-    notExist.add(nums[i]);
   }
-  return false;
+
+  return max;
 };
