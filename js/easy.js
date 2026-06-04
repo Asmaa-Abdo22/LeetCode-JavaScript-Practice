@@ -342,18 +342,29 @@
 //   return max;
 // };
 //& 29- Move Zeroes
-var moveZeroes = function(nums) {
-    let insertPos = 0;
+// var moveZeroes = function(nums) {
+//     let insertPos = 0;
 
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] !== 0) {
-            nums[insertPos] = nums[i];
-            insertPos++;
-        }
-    }
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] !== 0) {
+//             nums[insertPos] = nums[i];
+//             insertPos++;
+//         }
+//     }
 
-    while (insertPos < nums.length) {
-        nums[insertPos] = 0;
-        insertPos++;
-    }
+//     while (insertPos < nums.length) {
+//         nums[insertPos] = 0;
+//         insertPos++;
+//     }
+// };
+//& 30- Find All Numbers Disappeared in an Array
+var findDisappearedNumbers = function (nums) {
+  let result = [];
+  let n = nums.length;
+  let set = new Set(nums);
+
+  for (let i = 1; i <= n; i++) {
+    if (!set.has(i)) result.push(i);
+  }
+  return result;
 };
