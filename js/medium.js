@@ -6,20 +6,34 @@
 // };
 // console.log(reverse(-123));
 //& 2- Longest Substring Without Repeating Characters
-var lengthOfLongestSubstring = function (s) {
-  let maxLength = 0;
-  for (let i = 0; i < s.length; i++) {
-    let substr = "";
+// var lengthOfLongestSubstring = function (s) {
+//   let maxLength = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     let substr = "";
 
-    for (let j = i; j < s.length; j++) {
-      if (substr.includes(s[j])) {
-        break;
-      }
+//     for (let j = i; j < s.length; j++) {
+//       if (substr.includes(s[j])) {
+//         break;
+//       }
 
-      substr += s[j];
-      maxLength = Math.max(maxLength, substr.length);
+//       substr += s[j];
+//       maxLength = Math.max(maxLength, substr.length);
+//     }
+//   }
+
+//   return maxLength;
+// };
+//& 3- Find All Duplicates in an Array
+var findDuplicates = function (nums) {
+  const count = {};
+  const result = [];
+  for (let num of nums) {
+    count[num] = (count[num] || 0) + 1;
+  }
+  for (let key in count){
+    if(count[key]===2){
+      result.push(Number(key))
     }
   }
-
-  return maxLength;
+  return result
 };
