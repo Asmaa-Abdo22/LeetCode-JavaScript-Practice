@@ -358,13 +358,28 @@
 //     }
 // };
 //& 30- Find All Numbers Disappeared in an Array
-var findDisappearedNumbers = function (nums) {
-  let result = [];
-  let n = nums.length;
-  let set = new Set(nums);
+// var findDisappearedNumbers = function (nums) {
+//   let result = [];
+//   let n = nums.length;
+//   let set = new Set(nums);
 
-  for (let i = 1; i <= n; i++) {
-    if (!set.has(i)) result.push(i);
+//   for (let i = 1; i <= n; i++) {
+//     if (!set.has(i)) result.push(i);
+//   }
+//   return result;
+// };
+//& 31- Convert To Title
+var convertToTitle = function (columnNumber) {
+  let result = "";
+
+  while (columnNumber > 0) {
+    columnNumber--;
+
+    let letter = String.fromCharCode((columnNumber % 26) + 65);
+    result = letter + result;
+
+    columnNumber = Math.floor(columnNumber / 26);
   }
+
   return result;
 };
