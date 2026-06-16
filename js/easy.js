@@ -384,13 +384,26 @@
 //   return result;
 // };
 //& 32- Third Maximum Number
-var thirdMax = function (nums) {
-  const uniQueArr = [...new Set(nums)];
-  let descendingArr = uniQueArr.sort((a, b) => b - a);
+// var thirdMax = function (nums) {
+//   const uniQueArr = [...new Set(nums)];
+//   let descendingArr = uniQueArr.sort((a, b) => b - a);
 
-  if (descendingArr.length >= 3) {
-    return descendingArr[2];
-  } else {
-    return descendingArr[0];
+//   if (descendingArr.length >= 3) {
+//     return descendingArr[2];
+//   } else {
+//     return descendingArr[0];
+//   }
+// };
+//& 33- Arranging Coins
+var arrangeCoins = function (n) {
+  let row = 1;
+  let completedRows = 0;
+
+  while (n >= row) {
+    n -= row;
+    completedRows++;
+    row++;
   }
+
+  return completedRows;
 };
