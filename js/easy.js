@@ -369,17 +369,28 @@
 //   return result;
 // };
 //& 31- Convert To Title
-var convertToTitle = function (columnNumber) {
-  let result = "";
+// var convertToTitle = function (columnNumber) {
+//   let result = "";
 
-  while (columnNumber > 0) {
-    columnNumber--;
+//   while (columnNumber > 0) {
+//     columnNumber--;
 
-    let letter = String.fromCharCode((columnNumber % 26) + 65);
-    result = letter + result;
+//     let letter = String.fromCharCode((columnNumber % 26) + 65);
+//     result = letter + result;
 
-    columnNumber = Math.floor(columnNumber / 26);
+//     columnNumber = Math.floor(columnNumber / 26);
+//   }
+
+//   return result;
+// };
+//& 32- Third Maximum Number
+var thirdMax = function (nums) {
+  const uniQueArr = [...new Set(nums)];
+  let descendingArr = uniQueArr.sort((a, b) => b - a);
+
+  if (descendingArr.length >= 3) {
+    return descendingArr[2];
+  } else {
+    return descendingArr[0];
   }
-
-  return result;
 };
