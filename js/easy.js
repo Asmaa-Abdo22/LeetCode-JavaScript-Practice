@@ -395,15 +395,20 @@
 //   }
 // };
 //& 33- Arranging Coins
-var arrangeCoins = function (n) {
-  let row = 1;
-  let completedRows = 0;
+// var arrangeCoins = function (n) {
+//   let row = 1;
+//   let completedRows = 0;
 
-  while (n >= row) {
-    n -= row;
-    completedRows++;
-    row++;
-  }
+//   while (n >= row) {
+//     n -= row;
+//     completedRows++;
+//     row++;
+//   }
 
-  return completedRows;
+//   return completedRows;
+// };
+//& 34- Valid Palindrome
+var isPalindrome = function (s) {
+  const cleaned = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return cleaned === cleaned.split("").reverse().join("");
 };
